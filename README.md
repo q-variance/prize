@@ -1,4 +1,4 @@
-# Q-Variance Prize — $20,000
+# Q-Variance Prize — Target Amount $20,000
 
 Can any continuous-time stochastic-volatility model reproduce the exact one-parameter parabolic relationship  
 σ(z) = √(σ₀² + z²/2)  
