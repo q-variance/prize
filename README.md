@@ -30,7 +30,7 @@ Repository contains:
 
 GitHub Actions will automatically run `score_submission.py` and post your score.
 
-**Prize Rules**
+**Challenge Rules**
 - Must use **variance** (sigma²)
 - Must cover **all 352 stocks** and **T = 5,10,...,130 days**
 
