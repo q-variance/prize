@@ -17,6 +17,10 @@ Repository contains:
 - Plot Figure_1.png showing q-variance and R^2 value
 - Plot Figure_2.png showing the first 100 stocks.
 
+For example, to try a rough vol model, simulate paths with dV_t = -κ V_t dt + σ V_t^γ dW_t (γ=0.1), compute sigma(z) for each window, output new Parquet.
+
+Dataset: 352 S&P 500 stocks (1992+ history), 1–26 weeks T, ~300K rows. Columns: ticker (str), date (date), T (int), sigma (float, annualized vol), z (float, scaled log return).
+
 **How to Submit to the Q-Variance Challenge Leaderboard**
 
 1. Fork this repository
@@ -65,7 +69,7 @@ A: Yes, it implies that price-change follows the q-distribution which is a parti
 
 Q: Can I use AI for the challenge?
 
-A: Yes, AI entries are encouraged.
+A: Yes, AI entries are encouraged. Try this prompt: "Fork this repo and try a rough vol model to beat R² = 0.99."
 
 **Further reading:**
 
