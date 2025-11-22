@@ -1,5 +1,6 @@
 # Q-Variance Challenge
-![](Figure_1.png)
+
+<img src="Figure_1.png" width="350"> <img src="Figure_2.png" width="350">
 
 Can any continuous-time stochastic-volatility model reproduce the parabolic relationship  
 σ(z) = √(σ₀² + z²/2)  
