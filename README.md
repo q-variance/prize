@@ -3,24 +3,22 @@
 <img src="Figure_1.png" width="700">
 
 Can any continuous-time stochastic-volatility model reproduce the parabolic relationship  
-σ(z) = √(σ₀² + z²/2)  
-across 352 assets and all horizons 1-26 weeks with R² ≥ 0.99 and ≤ 2 free parameters?
+σ(z)² = σ₀² + (z-zoff)²/2
+across all horizons 1-26 weeks with R² ≥ 0.99 and ≤ 2 free parameters?
 
 Here z = x/sqrt(T) where x is the log price change over a period T, adjusted for drift. Read the paper Q-Variance_Wilmott_July2025.pdf for more details.
 
-Quantum baseline (Orrell 2025): R² ≈ 0.998. Uses two parameters, σ₀ and a small horizontal offset
-
 Repository contains:
-- Data set (dataset.parquet) in three parts containing price data for 352 stocks from the S&P 500 (stocks with less than 25 years of data were not included)
+- Data set (dataset.parquet) in three parts containing price data for 352 stocks from the S&P 500 (stocks with less than 25 years of data excluded)
 - Full dataset generator (data_loader.py) to show how the data was generated
 - Scoring engine
 - Live leaderboard
 - Baseline quantum fit
-- Plot Figure_1.png showing q-variance and R^2 value
+- Plot Figure_1.png showing q-variance and R^2 value for the actual data
 
 For example, to try a rough vol model, simulate a long price series, compute sigma(z) for each window, output new Parquet.
 
-Dataset: 352 S&P 500 stocks (1992+ history), 1–26 weeks T, ~300K rows. 
+Dataset: 352 S&P 500 stocks (2000+ history), 1–26 weeks T, ~300K rows. 
 
 Columns: ticker (str), date (date), T (int), sigma (float, annualized vol), z (float, scaled log return).
 
@@ -33,13 +31,13 @@ Python dependencies: pip install yfinance pandas numpy scipy matplotlib pyarrow
 
 ## Scoring the Challenge
 
-The challenge scores submissions on **one global R²** over the **entire dataset** (all 352 stocks, all 26 horizons). Since the quantum model with σ₀=0.255 and zoff = 0.02 gives a near-perfect fit (R² = 0.998) this curve can be used as a proxy for the real data.
+The challenge scores submissions on **one global R²** over the **entire dataset**. Since the quantum model with σ₀=0.255 and zoff = 0.02 gives a near-perfect fit (R² = 0.998) this curve can be used as a proxy for the real data. In other words, the aim is to fit the parabola.
 
 ### How Scoring Works
 1. **Load Submission**: `score_submission.py` reads your `dataset.parquet` (must match format: ticker, date, T, z, sigma).
 2. **Compute Variance**: Converts sigma → var = sigma².
 3. **Global Binning**: Bins z from -0.6 to 0.6 (delz=0.025), averages var per bin (as in `baseline_fit.py` global plot).
-4. **Fit**: Fits var = σ₀² + z²/2 to binned averages, computes R².
+4. **Fit**: Fits var = σ₀² + (z-zoff)²/2 to binned averages, computes R².
 5. **Threshold**: R² ≥ 0.98 with no more than two free parameters wins the challenge (baseline: 0.998).
 
 ### Test Your Submission
@@ -60,7 +58,7 @@ python3 score_submission.py
 
 **Frequently Asked Questions**
 
-Q: Is q-variance a well-known "stylized fact"?
+Q: What is q-variance – is it a well-known "stylized fact"?
 
 A: No, a stylized fact is just a general observation about market data, as opposed to a firm prediction. Q-variance is a falsifiable prediction because the multiplicative constant on the quadratic term is not a fit, it is set by theory at 0.5. The same formula applies for all period lengths T.
 
@@ -82,15 +80,15 @@ A: Yes, however it is not the same thing because q-variance applies to realized 
 
 Q: Is q-variance related to the price-change distribution over a period?
 
-A: Yes, it implies that price-change follows the q-distribution which is a particular time-invariant, Poisson-weighted sum of Gaussians.
+A: Yes, it implies that price-change follows the q-distribution which is a particular time-invariant, Poisson-weighted sum of Gaussians (see further reading below).
 
-Q: As seen in the figure above, the data clearly follows a parabola with a small offset so there is no way to beat the quantum model, whose only parameters are the minimum volatility and an offset, so what is the point in trying?
+Q: As seen in the figure above, the data clearly follows a parabola with a small offset so there is no way to beat the quantum model – what is the point in trying?
 
 A: The quantum model predicts variance and the price-change distribution, but does not provide a time series of daily prices. If a classical model can do that, and still produce the quadratic shape, then that will be very useful. We will therefore also give an honorable mention to any classical entry which can come close to matching the quantum model even if it involves extra parameters.
 
 Q: Can I use AI for the challenge?
 
-A: Yes, AI entries are encouraged. Try this prompt: "Fork this repo and try a rough vol model to beat R² = 0.99."
+A: Yes, AI-assisted entries are encouraged.
 
 **Further reading:**
 
