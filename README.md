@@ -1,12 +1,12 @@
 # Q-Variance Challenge
 
-<img src="Figure_1.png" width="700">
+<img src="Figure_1.png" width="450"> <img src="Figure_3.png" width="450">
 
 Can any continuous-time stochastic-volatility model reproduce the parabolic relationship  
 σ(z)² = σ₀² + (z-zoff)²/2
 across all horizons 1-26 weeks with R² ≥ 0.99 and ≤ 2 free parameters?
 
-Here z = x/sqrt(T) where x is the log price change over a period T, adjusted for drift. Blue points in the figure are variance vs z for stocks from the S&P 500. Blue line is average variance as a function of z, red line is the q-variance curve. Read the paper Q-Variance_Wilmott_July2025.pdf for more details.
+Here z = x/sqrt(T) where x is the log price change over a period T, adjusted for drift. Blue points in the left panel are variance vs z for stocks from the S&P 500. Blue line is average variance as a function of z, red line is the q-variance curve. Right panel shows individual stocks. Read the paper Q-Variance_Wilmott_July2025.pdf for more details.
 
 Repository contains:
 - Data set (dataset.parquet) in three parts containing price data for 352 stocks from the S&P 500 (stocks with less than 25 years of data excluded)
@@ -102,9 +102,4 @@ Orrell D (2025) Quantum impact and the supply-demand curve. Philosophical Transa
 
 Orrell D (2026) The Quantum Stock Market. MIT Press (in press).
 
-**Additional plots:**
-
-Left panel shows data for all stocks, and  T = 10, 20, 40 and 80 days. Right panel shows data for all T, and the 352 individual stocks.
-
-<img src="Figure_2.png" width="400"> <img src="Figure_3.png" width="400">
 
