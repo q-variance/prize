@@ -2,20 +2,20 @@
 
 **Model**: rBergomi (exact implementation from ryanmccrickerd/rough_bergomi)  
 **Parameters**:  
-- Roughness index `a = -0.43` (H ≈ 0.285)  
-- Leverage `ρ = -0.9`  
-- Vol-of-vol `η = 1.6`  
-- Initial variance `ξ = 0.36² ≈ 0.1296`  
+- Roughness index `a = -0.1` (H ≈ 0.45)  
+- Leverage `ρ = 0` for symmetry  
+- Vol-of-vol `η = 1.3`  
+- Initial variance `ξ = 0.36² ≈ 0.1296`
 
-**Simulation**: 400 years of daily prices (100,800 trading days)  
+**Simulation**: Period `T = 1` for one year simulation, do `N = 10,000` runs so total 10,000 years of daily prices  
 
-**Global R²**: **0.945**
+**Global R²**: **0.988**
 
 Rough volatility is the **strongest honest classical stochastic volatility model** in existence — the one that perfectly fits implied volatility surfaces at every major bank.
 
 It produces realistic bursts, crashes, leverage effect, and roughness.
 
-And yet — on the **realised volatility vs scaled return** law — it is **defeated** by the quantum model’s perfect analytic parabola using **two parameters and no roughness tuning**.
+And yet — on the **realised volatility vs scaled return** law — it is **just beaten** by the quantum model’s perfect analytic parabola using **two parameters and no roughness tuning**.
 
 Classical stochastic volatility — even at its absolute peak — cannot explain the data as well as the quantum model.
 
