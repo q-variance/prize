@@ -92,7 +92,7 @@ A: The quantum model predicts variance and the price-change distribution, but do
 
 Q: Can I use AI for the challenge?
 
-A: Yes, AI-assisted entries are encouraged. We used Grok to help design and code the challenge. Its [entry](submissions/grok_rough_vol) is a rough volatility model which uses 4 parameters for an R² of 0.945 – close but no cigar!
+A: Yes, AI-assisted entries are encouraged. We used Grok to help design and code the challenge. Its [entry](submissions/grok_rough_vol) is a rough volatility model which uses three parameters for an R² of 0.988 – close but no cigar!
 
 **Further reading:**
 
