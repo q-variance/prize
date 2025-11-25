@@ -106,4 +106,6 @@ Orrell D (2025) Quantum impact and the supply-demand curve. Philosophical Transa
 
 Orrell D (2026) The Quantum Stock Market. MIT Press (in press).
 
-
+Wilmott P, Orrell D (2025) [Q-Variance: or, a Duet Concerning the Two Chief World Systems](Q-Variance_Wilmott_July2025.pdf). Wilmott 2025(138).
+ 
+Visit the [Qvar Shiny app](https://david-systemsforecasting.shinyapps.io/qvar/) to do more simulations.
