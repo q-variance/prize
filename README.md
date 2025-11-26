@@ -15,6 +15,7 @@ Repository contains:
 - Live leaderboard
 - Baseline quantum fit
 - Plot [Figure 1](Figure_1.png) showing q-variance and R² value for the actual data
+- Jupyter notebook showing how to compute q-variance for a single asset
 
 For example, to try a rough vol model, simulate a long price series, compute sigma²(z) for each window, output new Parquet. You can also do multiple simulations: assign each a different ticker and the code will average over them as if they are different stocks.
 
