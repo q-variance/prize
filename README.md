@@ -66,7 +66,7 @@ A: No, a stylized fact is just a general observation about market data. Q-varian
 
 Q: Is q-variance a large effect?
 
-A: Yes, the minimum variance is about half the total variance so this is a large effect. If you are modelling variance then you **need** to take q-variance into account.
+A: Yes, the minimum variance is about half the total variance so this is a large effect. If you are modelling variance then you probably need to take q-variance into account.
 
 Q: Has q-variance been previously reported in the literature?
 
