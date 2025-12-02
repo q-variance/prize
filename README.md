@@ -4,11 +4,11 @@
 
 Can any continuous-time stochastic-volatility model, using no more than three free parameters, reproduce what may be the most **clear-cut empirical property of variance**, namely the parabolic relationship known as **q-variance**?
 
-This states that, for a sufficiently large data set of stock prices, variance is well-approximated by the equation
+This states that, for a sufficiently large data set of stock prices, variance over a period $T$ is well-approximated by the equation
 
 $\sigma^2(z) = \sigma_0^2 + \frac{(z-z_0)^2}{2}$
 
-where $z = x/\sqrt{T}$, and $x$ is the log price change over a period $T$, adjusted for drift (the parameter $z_0$ accounts for small asymmetries). The figure above illustrates q-variance for stocks from the S&P 500, and periods $T$ of 1-26 weeks. Blue points are variance vs $z$ for individual periods, blue line is average variance as a function of $z$, red line is the q-variance curve. 
+where $z = x/\sqrt{T}$, and $x$ is the log price change over the period, adjusted for drift (the parameter $z_0$ accounts for small asymmetries). The figure above illustrates q-variance for stocks from the S&P 500, and periods $T$ of 1-26 weeks. Blue points are variance vs $z$ for individual periods, blue line is average variance as a function of $z$, red line is the q-variance curve. 
 
 Q-variance affects everything from option pricing to how we measure and talk about volatility. Read the [Q-Variance Wilmott paper](Q-Variance_Wilmott_July2025.pdf) for more details and examples.
 
