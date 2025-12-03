@@ -2,7 +2,7 @@
 
 <img src="Figure_1.png" width="800">
 
-Can any continuous-time stochastic-volatility model, using no more than three free parameters, reproduce what may be the most **clear-cut empirical property of variance**, namely the parabolic relationship known as **q-variance**?
+Can any continuous-time model, using no more than three free parameters, reproduce what may be the most **clear-cut empirical property of variance**, namely the parabolic relationship known as **q-variance**?
 
 This states that, for a sufficiently large data set of stock prices, variance over a period $T$ is well-approximated by the equation
 
