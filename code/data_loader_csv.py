@@ -8,7 +8,7 @@ from pathlib import Path
 HORIZONS = 5*(np.arange(26)+1)   # does 1 to 26 weeks, can also do [5, 10, 20, 40, 80, 160]
 
 all_data = []
-TICKERS = ["Rough"]
+TICKERS = ["Model"]
 for ticker in TICKERS:
     df = pd.read_csv("variance_timeseries.csv")
     price = df["Price"]
